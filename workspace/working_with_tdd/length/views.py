@@ -16,9 +16,10 @@ def convert(request):
         input_unit = request.GET['input_unit']
         input_value = request.GET['input_value']
         output_unit = request.GET['output_unit']
+		
         metres = convert_to_metre[input_unit] * float(input_value)
         output_value = metres * convert_from_metre[output_unit]
-		
+
         data = {
             "input_unit": input_unit,
             "input_value": input_value,
