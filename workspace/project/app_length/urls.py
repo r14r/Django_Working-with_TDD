@@ -1,7 +1,7 @@
 from django.urls import path
-from length import views
+from app_length import views
 
-app_name = 'length'
+app_name = 'app_length'
 
 urlpatterns = [
     path('convert/', views.convert, name='convert'),

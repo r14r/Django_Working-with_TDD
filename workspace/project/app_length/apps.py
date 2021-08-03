@@ -3,4 +3,4 @@ from django.apps import AppConfig
 
 class LengthConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'length'
+    name = 'app_length'

@@ -11,7 +11,7 @@ class TestLengthConversion(TestCase):
 		This method runs before the execution of each test case.
 		"""
 		self.client = Client()
-		self.url = reverse("length:convert")
+		self.url = reverse("app_length:convert")
 
 
 	def test_centimetre_to_metre_conversion(self):
@@ -28,7 +28,6 @@ class TestLengthConversion(TestCase):
 
 
 	def test_centimetre_to_metre_conversion(self):
-
 		"""
 		Tests conversion of centimetre measurements to metre.
 		"""
@@ -47,6 +46,7 @@ class TestLengthConversion(TestCase):
 			"output_unit": "mile",
 			"input_value": round(985805791.3527409, 3)
 		}
+
 		response = self.client.get(self.url, data)
 		self.assertContains(response, 6125.511)
 				

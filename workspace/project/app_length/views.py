@@ -1,13 +1,15 @@
 from django.shortcuts import render
-from length.forms import LengthConverterForm
+from app_length.forms import LengthConverterForm
 
 convert_to_metre = {
     "centimetre": 0.01,
-    "metre": 1.0
+    "metre": 1.0,
+    "mile": 1609.34
 }
 convert_from_metre = {
     "centimetre": 100,
-    "metre": 1.0
+    "metre": 1.0,
+     "mile": 0.000621371
 }
 
 def convert(request):
@@ -29,7 +31,7 @@ def convert(request):
 
         form = LengthConverterForm(initial=data)
         return render(
-            request, "length.html", context={"form": form})
+            request, "default.html", context={"form": form})
 
     return render(
-        request, "length.html", context={"form": form})
+        request, "default.html", context={"form": form})
